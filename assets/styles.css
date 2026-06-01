@@ -1,0 +1,97 @@
+
+:root{
+  --bg:#fafaf7; --card:#fff; --text:#222; --muted:#777;
+  --accent:#06c755; --accent-dark:#04a047;
+  --border:#e4e4e0; --link:#067;
+  --maxw:1100px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  line-height:1.75;}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;display:block}
+
+header.site{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+header.site .wrap{max-width:var(--maxw);margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+header.site .brand{display:flex;flex-direction:column;line-height:1.2}
+header.site .brand .ttl{font-weight:700;font-size:20px;color:#111}
+header.site .brand .tag{font-size:12px;color:var(--muted)}
+header.site nav{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center}
+header.site nav a{font-size:13px;color:#333;padding:4px 0}
+header.site nav a.cta{background:var(--accent);color:#fff;border-radius:999px;padding:6px 14px;font-weight:700}
+header.site nav a.cta:hover{background:var(--accent-dark);text-decoration:none}
+@media (max-width:640px){
+  header.site .wrap{padding:10px 14px;gap:8px}
+  header.site .brand .tag{display:none}
+  header.site nav a{font-size:12px}
+}
+
+main{max-width:var(--maxw);margin:0 auto;padding:30px 20px}
+
+.hero{background:linear-gradient(135deg,#06c75518,#fff);border:1px solid var(--border);border-radius:16px;padding:34px 28px;margin-bottom:28px}
+.hero h1{margin:0 0 8px;font-size:28px}
+.hero p{margin:0;color:var(--muted)}
+
+/* CTA / 埋め込みセクション */
+.section-title{font-size:18px;margin:36px 0 14px;padding-left:12px;border-left:4px solid var(--accent)}
+.connect{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+@media (max-width:760px){.connect{grid-template-columns:1fr}}
+.connect .panel{background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.connect h3{margin:0;font-size:16px;color:#111}
+.connect p{margin:0;font-size:13px;color:#555}
+.line-cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.line-cta .qr{width:140px;height:140px;border:1px solid var(--border);border-radius:10px;padding:6px;background:#fff}
+.line-cta .qr img{width:100%;height:100%;object-fit:contain}
+.line-cta .text{flex:1;min-width:180px;display:flex;flex-direction:column;gap:10px}
+.line-cta .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 18px;border-radius:999px;text-align:center;font-size:14px}
+.line-cta .btn:hover{background:var(--accent-dark);text-decoration:none}
+.video-wrap{position:relative;width:100%;padding-bottom:56.25%;border-radius:10px;overflow:hidden;background:#000}
+.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.insta-grid a{display:block;border-radius:8px;overflow:hidden;border:1px solid var(--border);text-align:center;padding:14px;background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);color:#fff;font-weight:700}
+.insta-grid a:hover{text-decoration:none;opacity:.92}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s ease, box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.06);text-decoration:none}
+.card .thumb{aspect-ratio:16/11;background:#eee;overflow:hidden}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.card .body{padding:14px 16px 18px;flex:1;display:flex;flex-direction:column;gap:6px}
+.card .meta{font-size:12px;color:var(--muted)}
+.card .cat{display:inline-block;font-size:11px;color:#fff;background:var(--accent);padding:2px 8px;border-radius:999px;margin-right:6px}
+.card .ttl{font-size:15px;font-weight:700;color:#222;line-height:1.5}
+.card a{color:inherit}
+
+/* 記事 / 固定ページ */
+.breadcrumb{font-size:12px;color:var(--muted);margin:6px 0 12px}
+.breadcrumb a{color:var(--muted)}
+.article{background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px 30px 34px}
+.article h1{font-size:26px;line-height:1.45;margin:0 0 12px}
+.article .post_meta{font-size:13px;color:var(--muted);margin-bottom:18px;display:flex;flex-wrap:wrap;gap:14px}
+.article .post_meta .cats a{display:inline-block;font-size:11px;color:#fff;background:var(--accent);padding:2px 8px;border-radius:999px;margin:0 4px 4px 0;text-decoration:none}
+.article .eyecatch{margin:6px 0 22px;border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+.article .post_body{font-size:15px}
+.article .post_body h2,.article .post_body h3,.article .post_body h4,.article .post_body h5{
+  margin:1.8em 0 .8em;line-height:1.45;border-left:4px solid var(--accent);padding-left:.7em;
+}
+.article .post_body h5{font-size:1.05em}
+.article .post_body p{margin:1em 0}
+.article .post_body img{margin:14px auto;border-radius:8px}
+.article .post_body blockquote{border-left:3px solid #ddd;padding:.3em 1em;color:#555;background:#f5f5f0;margin:1em 0;border-radius:6px}
+.article .post_body ul,.article .post_body ol{padding-left:1.6em}
+.article .post_body a{color:var(--accent-dark);word-break:break-all}
+.article .post_body .has-background{padding:.5em .8em;border-radius:6px}
+
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:24px}
+.pager a{flex:1;background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px 16px;color:#333;font-size:13px;display:block}
+.pager a small{display:block;color:var(--muted);font-size:11px;margin-bottom:2px}
+.pager a:hover{border-color:var(--accent);text-decoration:none}
+.pager .next{text-align:right}
+.pager .disabled{opacity:.35;pointer-events:none}
+
+footer.site{margin-top:60px;padding:30px 20px;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:12px;background:#fff}
+footer.site a{color:#555}
