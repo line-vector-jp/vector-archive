@@ -30,19 +30,28 @@ header.site nav a.cta:hover{background:var(--accent-dark);text-decoration:none}
 
 main{max-width:var(--maxw);margin:0 auto;padding:30px 20px}
 
-/* TOPメインバナー (高さを半分にして縮尺維持) */
-.hero-banner{margin:0 auto 28px;max-width:50%;border-radius:16px;overflow:hidden;border:1px solid var(--border);background:#fff;box-shadow:0 4px 18px rgba(0,0,0,.04)}
+/* ホームの2カラム (コンテンツ + 右サイドバー) */
+.home-layout{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:28px;align-items:start}
+.home-layout .content{min-width:0}
+.home-layout aside.sidebar{position:sticky;top:80px;display:flex;flex-direction:column;gap:14px}
+@media (max-width:880px){
+  .home-layout{grid-template-columns:1fr}
+  .home-layout aside.sidebar{position:static;flex-direction:row;flex-wrap:wrap}
+  .home-layout aside.sidebar .page-banners{flex-direction:row;flex-wrap:wrap}
+  .home-layout aside.sidebar .page-banners a{flex:1 1 200px}
+}
+
+/* TOPメインバナー */
+.hero-banner{margin-bottom:22px;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#fff;box-shadow:0 4px 18px rgba(0,0,0,.04)}
 .hero-banner img{width:100%;height:auto;display:block}
-@media (max-width:760px){.hero-banner{max-width:80%}}
-@media (max-width:480px){.hero-banner{max-width:100%}}
-.hero{background:linear-gradient(135deg,#06c75518,#fff);border:1px solid var(--border);border-radius:16px;padding:28px 28px;margin-bottom:28px}
-.hero h1{margin:0 0 8px;font-size:26px}
+.hero{background:linear-gradient(135deg,#06c75518,#fff);border:1px solid var(--border);border-radius:14px;padding:24px 24px;margin-bottom:22px}
+.hero h1{margin:0 0 8px;font-size:24px}
 .hero p{margin:0;color:var(--muted);font-size:14px}
 
-/* 固定ページへのバナーリスト */
-.page-banners{display:flex;flex-direction:column;gap:14px;margin-bottom:32px}
-.page-banners a{display:block;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#fff;transition:transform .15s ease, box-shadow .15s ease}
-.page-banners a:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.07);text-decoration:none}
+/* 固定ページへのバナーリスト (サイドバー縦並び) */
+.page-banners{display:flex;flex-direction:column;gap:12px}
+.page-banners a{display:block;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:#fff;transition:transform .15s ease, box-shadow .15s ease}
+.page-banners a:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.08);text-decoration:none}
 .page-banners img{width:100%;height:auto;display:block}
 
 /* CTA / 埋め込みセクション */
