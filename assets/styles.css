@@ -30,9 +30,11 @@ header.site nav a.cta:hover{background:var(--accent-dark);text-decoration:none}
 
 main{max-width:var(--maxw);margin:0 auto;padding:30px 20px}
 
-/* TOPメインバナー */
-.hero-banner{margin-bottom:28px;border-radius:16px;overflow:hidden;border:1px solid var(--border);background:#fff;box-shadow:0 4px 18px rgba(0,0,0,.04)}
+/* TOPメインバナー (高さを半分にして縮尺維持) */
+.hero-banner{margin:0 auto 28px;max-width:50%;border-radius:16px;overflow:hidden;border:1px solid var(--border);background:#fff;box-shadow:0 4px 18px rgba(0,0,0,.04)}
 .hero-banner img{width:100%;height:auto;display:block}
+@media (max-width:760px){.hero-banner{max-width:80%}}
+@media (max-width:480px){.hero-banner{max-width:100%}}
 .hero{background:linear-gradient(135deg,#06c75518,#fff);border:1px solid var(--border);border-radius:16px;padding:28px 28px;margin-bottom:28px}
 .hero h1{margin:0 0 8px;font-size:26px}
 .hero p{margin:0;color:var(--muted);font-size:14px}
