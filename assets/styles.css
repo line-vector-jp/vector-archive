@@ -30,9 +30,18 @@ header.site nav a.cta:hover{background:var(--accent-dark);text-decoration:none}
 
 main{max-width:var(--maxw);margin:0 auto;padding:30px 20px}
 
-.hero{background:linear-gradient(135deg,#06c75518,#fff);border:1px solid var(--border);border-radius:16px;padding:34px 28px;margin-bottom:28px}
-.hero h1{margin:0 0 8px;font-size:28px}
-.hero p{margin:0;color:var(--muted)}
+/* TOPメインバナー */
+.hero-banner{margin-bottom:28px;border-radius:16px;overflow:hidden;border:1px solid var(--border);background:#fff;box-shadow:0 4px 18px rgba(0,0,0,.04)}
+.hero-banner img{width:100%;height:auto;display:block}
+.hero{background:linear-gradient(135deg,#06c75518,#fff);border:1px solid var(--border);border-radius:16px;padding:28px 28px;margin-bottom:28px}
+.hero h1{margin:0 0 8px;font-size:26px}
+.hero p{margin:0;color:var(--muted);font-size:14px}
+
+/* 固定ページへのバナーリスト */
+.page-banners{display:flex;flex-direction:column;gap:14px;margin-bottom:32px}
+.page-banners a{display:block;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#fff;transition:transform .15s ease, box-shadow .15s ease}
+.page-banners a:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.07);text-decoration:none}
+.page-banners img{width:100%;height:auto;display:block}
 
 /* CTA / 埋め込みセクション */
 .section-title{font-size:18px;margin:36px 0 14px;padding-left:12px;border-left:4px solid var(--accent)}
@@ -49,8 +58,14 @@ main{max-width:var(--maxw);margin:0 auto;padding:30px 20px}
 .line-cta .btn:hover{background:var(--accent-dark);text-decoration:none}
 .video-wrap{position:relative;width:100%;padding-bottom:56.25%;border-radius:10px;overflow:hidden;background:#000}
 .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.insta-grid a{display:block;border-radius:8px;overflow:hidden;border:1px solid var(--border);text-align:center;padding:14px;background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);color:#fff;font-weight:700}
-.insta-grid a:hover{text-decoration:none;opacity:.92}
+
+/* Instagram CTA カード */
+.insta-card{background:linear-gradient(135deg,#feda75 0%,#fa7e1e 18%,#d62976 45%,#962fbf 72%,#4f5bd5 100%);border-radius:16px;padding:30px 26px;color:#fff;text-align:center;box-shadow:0 10px 30px rgba(214,41,118,.18)}
+.insta-card .ico{font-size:40px;line-height:1;margin-bottom:6px}
+.insta-card h3{margin:0 0 4px;font-size:22px;color:#fff;letter-spacing:.5px}
+.insta-card .handle{font-size:15px;opacity:.95;margin-bottom:16px}
+.insta-card .insta-btn{display:inline-block;background:#fff;color:#d62976;font-weight:800;padding:13px 26px;border-radius:999px;font-size:15px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.insta-card .insta-btn:hover{background:#fff7fb;text-decoration:none;transform:translateY(-1px)}
 
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 @media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
